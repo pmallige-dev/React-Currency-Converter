@@ -1,9 +1,10 @@
+import './Currency.style.css'
 
 const Currency = ({currencyId, amountId, selectedValue, onSelectChangeHandler, amountOneInputChange, amountTwo}) => {
 
     return (
-        <div className="currency">
-            <select id={currencyId} value={selectedValue} onChange={onSelectChangeHandler}>
+        <div className="currency-container ui action input">
+            <select className="ui compact selection dropdown" id={currencyId} value={selectedValue} onChange={onSelectChangeHandler}>
                 <option value="AED">AED</option>
                 <option value="ARS">ARS</option>
                 <option value="AUD">AUD</option>

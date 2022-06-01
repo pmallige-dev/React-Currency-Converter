@@ -1,0 +1,43 @@
+.ui.segment {
+    background: #fffb81;
+    border: 0;
+    border-color: #fffb81;
+    padding: 40px 40px 40px 40px;
+}
+
+.ui.input>input {
+    border: 0;
+    background: transparent;
+    text-align: right;
+}
+
+.ui.selection.dropdown {
+    background: transparent;
+}
+
+
+/* img {
+    position: relative;
+    left: 120px;
+}
+
+h1 {
+    position: relative;
+    left: 35px;
+} */
+
+.swap-btn-container {
+    position: relative;
+    right: 35px;
+}
+
+.rate-container {
+    position: relative;
+    left: 70px;
+}
+
+/* .footer-container {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+} */

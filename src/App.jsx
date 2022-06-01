@@ -1,6 +1,7 @@
 import CurrencyImg from './img/exchange.png';
 import Currency from './components/Currency/Currency.component'
 import { useEffect, useState } from 'react';
+import './App.css'
 
 
 const App = () => {
@@ -44,20 +45,18 @@ const App = () => {
     }
 
     const swapCurrencyHandler = () => {
-        // let temp = currencyOneSelected;
-        // currencyOneSelected = currencyTwoSelected;
-        // currencyTwoSelected  = temp;
         setCurrencyOneSelected(currencyTwoSelected);
         setCurrencyTwoSelected(currencyOneSelected);
     }
 
     return (
-        <div>
-            <div className="logo-container">
-                <img src={CurrencyImg} alt="Currency converter" />
+        <div className="app-container ui center aligned segment">
+            <img src={CurrencyImg} alt="Currency converter" />
+
+            <div>
+                <h1>Currency Converter App</h1>
+                <p>Choose the currency and the amounts to get the exchange rate</p>
             </div>
-            <h1>Currency Converter App</h1>
-            <p>Choose the currency and the amounts to get the exchange rate</p>
 
             <Currency
                 currencyId="currency-one"
@@ -67,9 +66,14 @@ const App = () => {
                 amountOneInputChange={amountOneInputChange}
             />
 
-            <button onClick={swapCurrencyHandler}>Swap</button>
-
-            <div className="rate-container">{rate}</div>
+            <div className="swap-btn-container">
+                <button className="swap-btn ui primary button" onClick={swapCurrencyHandler}>Swap</button>
+                <span className="rate-container">
+                    <strong>
+                        1 {currencyOneSelected} = {rate} {currencyTwoSelected}
+                    </strong>
+                </span>
+            </div>
 
             <Currency
                 currencyId="currency-two"
@@ -78,6 +82,12 @@ const App = () => {
                 onSelectChangeHandler={onSelectChangeHandlerCurrencyTwo}
                 amountTwo={amountTwo}
             />
+
+            <div className="footer-container">
+                <a href="https://www.flaticon.com/free-icons/currency" title="currency icons">Currency icons created by Pixel perfect - Flaticon</a>
+                <br />
+                This App is created by Prakyath Mallige
+            </div>
         </div>
     )
 }
